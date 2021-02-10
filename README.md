@@ -6,4 +6,4 @@ Python
 
 C/C++ 
 
-It also contains data-structure related problems!
+Each language has a corresponding folder and env. There also some data-structure related problems!
