@@ -64,15 +64,7 @@ function quickSort(array, left=0, right=array.length-1){
     return array;
 }
 
-/**
- * create a recursive func that takes in an array , start, end 
- * create a pivotFinder || partitionPivot func that takes in the same args as above
- * then return the pivotIndex and perform quick sort on the left and right subarrays
- * 
- * 
- */
-
-
+// ITERATION - 3
 function myQuickSort(array, left=0, right=array.length-1){
     if(left < right){
         // get the pivot index 
