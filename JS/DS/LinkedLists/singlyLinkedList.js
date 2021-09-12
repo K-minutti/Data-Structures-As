@@ -72,6 +72,17 @@ class SinglyLinkedList {
         this.length+=1;
         return this;
     }
+
+    get(index){
+        if(index < 0 || index >= this.length) return null;
+        let current = this.head;
+        while(index > 0){
+            current = current.next;
+            index-=1;
+        }
+        return current;
+
+    }
      
 }
 
@@ -80,3 +91,7 @@ class SinglyLinkedList {
 const list = new SinglyLinkedList();
 list.insert("N-1");
 list.insert("N-2")
+list.insert("N-3");
+list.insert("N-4")
+
+console.log(list.get(0));
