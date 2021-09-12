@@ -16,7 +16,7 @@ class SinglyLinkedList {
         this.tail = null;
         this.length = 0;
     }
-    insert(value){
+    push(value){
         const node = new Node(value);
         if(!this.head){
             this.head = node;
@@ -83,15 +83,20 @@ class SinglyLinkedList {
         return current;
 
     }
+
+    set(index, value){
+        let nodeToUpdate = this.get(index);
+        if(nodeToUpdate === null) return false;
+        nodeToUpdate.value = value;
+        return true;
+    }
      
 }
 
 
 
 const list = new SinglyLinkedList();
-list.insert("N-1");
-list.insert("N-2")
-list.insert("N-3");
-list.insert("N-4")
-
-console.log(list.get(0));
+list.push("N-1");
+list.push("N-2")
+list.push("N-3");
+list.push("N-4")
