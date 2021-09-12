@@ -50,6 +50,15 @@ class SinglyLinkedList {
         return nextNode;
         }
     }
+
+    shift(){
+        if (this.length === 0) return undefined;
+        let removedHead = this.head;
+        this.head = removedHead.next;
+        this.length -=1;
+        // if tail len is 0 set tail to null again
+        return removedHead;
+    }
 }
 
 
