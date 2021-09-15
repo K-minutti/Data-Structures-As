@@ -46,7 +46,7 @@ class SinglyLinkedList {
         }
         node.next = null;
         this.tail = node;
-        this.length +=1;
+        this.length -=1;
         return nextNode;
         }
     }
@@ -90,8 +90,58 @@ class SinglyLinkedList {
         nodeToUpdate.value = value;
         return true;
     }
-     
-}
+
+    insert(index, value){
+        if(index < 0 || index > this.length) return false;
+        if(index === this.length) {
+            return !!this.push(value); // !! coersion to boolean
+        }
+        if(index === 0){
+            return !!this.unshift(value);
+        } 
+        else {
+            let newNode = new Node(value);
+            let prevNode = this.get(index-1);// node before the node idx you will update
+            newNode.next = prevNode.next;
+            prevNode.next = newNode;
+        
+        }
+        this.length +=1;
+        return true;
+    }
+
+    remove(index){
+        if(index < 0 || index >= this.length) return undefined;
+        if(index === this.length-1) return this.pop();
+        if(index === 0) return this.shift();
+
+        let prevNode = this.get(index-1);
+        let removedNode = prevNode.next;
+        prevNode.next = removedNode.next;
+        this.length -=1;
+        return removedNode;
+    }
+
+    reverse(){
+    let currNode = this.head;
+    this.head = this.tail;
+    this.tail = currNode;
+
+    let nextNode;
+    let prevNode = null; // init to null to set new tail next to null
+
+    for(let i = 0; i < this.length; ++i){
+        nextNode = currNode.next;
+        currNode.next = prevNode;
+        prevNode = currNode;
+        currNode = nextNode;
+    }
+
+    return this; // returning  linked list (reversed)
+    }
+} 
+
+
 
 
 
@@ -100,3 +150,9 @@ list.push("N-1");
 list.push("N-2")
 list.push("N-3");
 list.push("N-4")
+
+console.log(list.reverse());
+
+console.log("========");
+
+console.log(list.reverse());
