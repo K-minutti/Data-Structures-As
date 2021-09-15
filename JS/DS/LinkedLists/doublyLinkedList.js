@@ -36,6 +36,36 @@ class DoublyLinkedList {
         this.length+=1;
         return this
     }
+
+    pop(){
+        if(this.length === 0) return undefined;
+        let removedNode = this.tail;
+        if(this.length === 1){
+            this.head = null;
+            this.tail = null;
+        } else {
+            this.tail = removedNode.prev;
+            this.tail.next = null;
+            removedNode.prev = null;
+        }
+        this.length-=1;
+        return removedNode;
+    }
+
+    shift(){
+        if(this.length === 0) return undefined;
+        let removedNode = this.head;
+        if(this.length === 1 ){
+            this.head = null;
+            this.tail = null;
+        }else {
+            this.head = removedNode.next;
+            this.head.prev = null;
+            removedNode.next = null;
+        }
+        this.length-=1;
+        return removedNode;
+    }
 }
 
 const list = new DoublyLinkedList();
