@@ -16,11 +16,29 @@ class Stack {
         this.last = null;
         this.size = 0;
     }
-    push(){
-        return null;
+    push(value){
+        const node = new Node(value);
+        if(this.size === 0){
+            this.first = node;
+            this.last = node;
+        } else {
+            // append to the front - first 
+            let prevTop = this.first;
+            this.first = node;
+            this.first.next = prevTop;
+        }
+        this.size+=1;
+        return this.size;
     }
 
     pop(){
-        return null;
+        if(this.size === 0) return undefined;
+        let removedNode = this.first;
+        if(this.size === 1){
+            this.last = null;
+        } 
+        this.first = this.first.next;
+        this.size-=1;
+        return removedNode.value;
     }
 }
