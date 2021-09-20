@@ -1,6 +1,6 @@
 This repo is for learning how to implement data structures in the following languages: 
 
-Javascript 
+JavaScript 
 
 Python 
 
