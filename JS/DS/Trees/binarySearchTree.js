@@ -77,9 +77,20 @@ class BinarySearchTree {
         return current;
     }
 
-    // remove from a bst
+    delete(value){
+        if(this.root === null) return this.root;
+        // value < root.value recurse down left subtree 
+        // value > root.value recurse down right subtree
 
-    // update from bst
+        // check for current node.right or left is === to value
+        // if it is then remove the node -
+            // check if node is parent node or leaf node
+            // if its a leaf node then we can simply remove the node;
+        // if its a parent
+            // need to find a successor 
+    }
+
+
 }
 
 let t = new BinarySearchTree();

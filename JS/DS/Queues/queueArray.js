@@ -7,7 +7,6 @@ class Queue {
         this.queue = [];
     }
 
-    //push() shift()
     push(value){
         this.queue.push(value);
         return true;
