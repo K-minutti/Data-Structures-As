@@ -120,6 +120,17 @@ class BinarySearchTree {
         return result;
     }
 
+    DFSPostOrder(){
+        const result = [];
+        function traverse(node){
+            if(node.left) traverse(node.left);
+            if(node.right) traverse(node.right);
+            result.push(node.value);
+        }
+        traverse(this.root);
+        return result
+    }
+
 }
 
 let t = new BinarySearchTree();
@@ -132,7 +143,7 @@ t.insert(2);
 t.insert(16);
 t.insert(7);
 
-console.log(t.DFSPreOrder())
+console.log(t.DFSPostOrder())
 /*
         10
     5        13
