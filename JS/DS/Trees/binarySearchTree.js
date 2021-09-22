@@ -90,6 +90,25 @@ class BinarySearchTree {
             // need to find a successor 
     }
 
+    breadthFirstSearch(){
+        if (this.root === null) return null;
+        const queue = [];
+        const result = [];
+
+        queue.push(this.root);
+        while(queue.length > 0){
+            let node = queue.shift();
+            result.push(node.value);
+            if (node.left){
+                queue.push(node.left);
+            }
+            if(node.right){
+                queue.push(node.right);
+            }
+
+        }
+        return result;
+    }
 
 }
 
@@ -103,4 +122,9 @@ t.insert(2);
 t.insert(16);
 t.insert(7);
 
-console.log(t.contains(6))
+console.log(t.breadthFirstSearch())
+/*
+        10
+    5        13
+ 2    7    11   16 
+*/
