@@ -22,21 +22,48 @@ class MaxBinaryHeap {
     }
 
     extractMax(){
-        if(this.heap.length === 0)return undefined;
         let maxElement = this.heap[0];
         let lastElement = this.heap.pop();
-        this.heap[0] = lastElement;
-        // while the root is not in its correct place bubble down
-        let currIdx = 0; //root
-        let heapLen = this.heap.length;
-        let element = this.heap[0];
-        while(true){
-        // swap the root with child nodes
-            break;
+        if(this.heap.length > 0){
+            this.heap[0] = lastElement;
+            this.bubbleDown();
         }
-
-        //
         return maxElement;
+    }
+
+    bubbleDown(){
+        let currIdx = 0;
+        const heapLength = this.heap.length;
+        const element = this.heap[0];
+        while(true){
+            let leftChildIdx = 2 * currIdx + 1; // grabbing node child
+            let rightChildIdx = 2 * currIdx +2;
+            let leftChild, rightChild;
+            let swap = null;
+
+            // swap var update logic 
+            if(leftChildIdx < heapLength) { //if in bounds
+                leftChild = this.heap[leftChild];            
+                if(leftChild > element){
+                    swap = leftChildIdx;
+                }
+            }
+
+            if(rightChild < heapLength){
+                rightChild = this.heap[rightChild];
+                if((swap === null && rightChild > element) ||
+                    (swap !== null && rightChild > leftChild)){
+                    swap = rightChildIdx;
+                }
+            }
+
+            if(swap === null) break;
+            // swap logic && update currIdx to move forward
+            this.heap[currIdx] = this.heap[swap];
+            this.heap[swap] = element;
+            currIdx = swap;//update
+
+        }
     }
 
     print(){
