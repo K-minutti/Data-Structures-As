@@ -43,14 +43,14 @@ class MaxBinaryHeap {
 
             // swap var update logic 
             if(leftChildIdx < heapLength) { //if in bounds
-                leftChild = this.heap[leftChild];            
+                leftChild = this.heap[leftChildIdx];            
                 if(leftChild > element){
                     swap = leftChildIdx;
                 }
             }
 
-            if(rightChild < heapLength){
-                rightChild = this.heap[rightChild];
+            if(rightChildIdx < heapLength){
+                rightChild = this.heap[rightChildIdx];
                 if((swap === null && rightChild > element) ||
                     (swap !== null && rightChild > leftChild)){
                     swap = rightChildIdx;
@@ -72,3 +72,16 @@ class MaxBinaryHeap {
 
 }
 
+const mH = new MaxBinaryHeap();
+
+mH.insert(3)
+mH.insert(2)
+mH.insert(4)
+mH.insert(0)
+mH.insert(34)
+mH.insert(44)
+mH.insert(50)
+
+mH.print();
+console.log("MAX",mH.extractMax());
+mH.print();
