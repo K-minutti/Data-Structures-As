@@ -6,7 +6,7 @@
 
 
 class HashTable {
-    constructor(size=23){
+    constructor(size=73){
         this.keyMap = new Array(size);
     }
     //underscore - convention for private class methods the method is still publicly available
@@ -31,7 +31,6 @@ class HashTable {
         // then push into the array handles both cases where null and where 
         // a value has already been set, using separate chaining the value must 
         // be set to an array then we push into that array an array with key,value
-        return mapIndex;
     }
 
     get(key){
@@ -49,6 +48,35 @@ class HashTable {
         return undefined;
     }
 
+    keys(){
+        let keys = [];
+        for(let i = 0; i < this.keyMap.length; ++i){
+            if(this.keyMap[i]){
+                for(let j = 0; j <this.keyMap[i].length; ++j){
+                    if(!keys.includes(this.keyMap[i][j][0])){
+                        keys.push(this.keyMap[i][j][0])
+                    }
+                }
+            }
+        }
+        return keys;
+    }
+
+    values(){
+        let values = [];
+        for(let i = 0; i < this.keyMap.length; ++i){
+            if(this.keyMap[i]){
+                for(let j = 0; j < this.keyMap[i].length; ++j){
+                    if(!values.includes(this.keyMap[i][j][1])){
+                        values.push(this.keyMap[i][j][1])
+                    }
+                        
+                }
+            }
+        }
+        return values;
+    }
+
     print(){
         console.log(this.keyMap)
     }
@@ -63,4 +91,6 @@ hash.set("Bonjour", "value 4");
 hash.set("Hola", "value 5");
 hash.set("Bon giorno", "value 6");
 
-console.log(hash.get("How"));
+//console.log(hash.get("How"));
+
+console.log(hash.keys());
