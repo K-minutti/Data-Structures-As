@@ -147,6 +147,10 @@ class DoublyLinkedList {
         return removedNode;
     }
 
+    reverse(){
+        return true;
+    }
+
 
 }
 

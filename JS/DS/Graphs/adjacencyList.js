@@ -37,4 +37,8 @@ class Graph {
         }
         delete this.adjacencyList[vertex];
     }
+
+    dfs(){
+        return null;
+    }
 }
