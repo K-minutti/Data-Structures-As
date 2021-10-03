@@ -38,7 +38,24 @@ class Graph {
         delete this.adjacencyList[vertex];
     }
 
-    dfs(){
-        return null;
+    DFSRecursive(startNode){
+        const res = []; // list to return search output 
+        const visited = {}; // map of visited nodes/vertex
+
+        function depthFirstSearch(vertex){
+            if(!vertex) return null;
+            visited[vertex] = true;
+            res.push(visited);
+            let nodeLen = this.adjacencyList[vertex].length;
+            for(let i = 0; i < nodeLen; ++i){
+                let adjNode = this.adjacencyList[vertex][i];
+                if(!visited[adjNode]){
+                    depthFirstSearch(adjNode)
+                }
+            }
+        }
+
+        depthFirstSearch(startNode)
+        return res;
     }
 }
