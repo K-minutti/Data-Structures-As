@@ -148,7 +148,14 @@ class DoublyLinkedList {
     }
 
     reverse(){
-        return true;
+        /*
+        head           tail
+        [1] -> [2] -> [3]
+        */
+       // set two pointers
+       // pointer1 to head
+       // pointer2 to pointer1.next
+       // 
     }
 
 
