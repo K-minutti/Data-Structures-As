@@ -1,6 +1,26 @@
 /**
  * Weighted graph implementation 
+ * Dijkstra's alogrithm 
+ * Priority Queue
  */
+
+class PriorityQueue {
+    constructor(){
+        this.values = [];
+    }
+
+    enqueue(value, priority) {
+        return null;
+    }
+
+    dequeue(){
+        return null;
+    }
+    //naive sort 
+    sort(){
+        this.values.sort((a,b) => a.priority - b.priority);
+    }
+}
 
 class WeightedGraph {
     constructor(){
