@@ -10,11 +10,12 @@ class PriorityQueue {
     }
 
     enqueue(value, priority) {
-        return null;
+        this.values.push({value, priority});
+        this.sort();
     }
 
     dequeue(){
-        return null;
+        return this.values.shift();
     }
     //naive sort 
     sort(){
