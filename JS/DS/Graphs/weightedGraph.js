@@ -38,4 +38,11 @@ class WeightedGraph {
         this.adjacencyList[vertexOne].push({vertex: vertexTwo, weight})
         this.adjacencyList[vertexTwo].push({vertex: vertexOne, weight})
     }
+
+    shortesPathDijkstra(start, finish) {
+        // setup algo
+
+        // logic 
+        return null
+    }
 }
