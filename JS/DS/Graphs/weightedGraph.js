@@ -41,8 +41,16 @@ class WeightedGraph {
 
     shortesPathDijkstra(start, finish) {
         // setup algo
+        const nodes = new PriorityQueue();
+        const distances = {};
+        const previous = {};
+
+        // let smallest;
 
         // logic 
+        while(nodes.values.length){
+            nodes.dequeue();
+        }
         return null
     }
 }
