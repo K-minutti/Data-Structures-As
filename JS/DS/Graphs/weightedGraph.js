@@ -47,6 +47,18 @@ class WeightedGraph {
 
         // let smallest;
 
+        // creating initial state for algorithm all nodes will be set to a len of 
+        // infinity excep for the current node-start
+        for(let vertex in this.adjacencyList){
+            if(vertex === start){// the current vertex is 0 for the len since its the same
+                distances[vertex] = 0;
+                nodes.enqueue(vertex,0);
+            } else {
+                distances[vertex] = Infinity;
+                nodes.enqueue(vertex, Infinity);
+            }
+            previous[vertex] = null;
+        }
         // logic 
         while(nodes.values.length){
             nodes.dequeue();
