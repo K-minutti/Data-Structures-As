@@ -17,7 +17,7 @@ class PriorityQueue {
     dequeue(){
         return this.values.shift();
     }
-    //naive sort 
+    //naive implementation of heap
     sort(){
         this.values.sort((a,b) => a.priority - b.priority);
     }
